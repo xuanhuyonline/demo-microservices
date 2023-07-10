@@ -1,4 +1,5 @@
 rootProject.name = 'microservice'
+includeBuild 'config-server'
 includeBuild 'discovery-service'
 includeBuild 'api-gateway'
 includeBuild 'userdetails-service'
