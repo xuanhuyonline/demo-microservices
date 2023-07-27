@@ -1,6 +1,5 @@
-package s3.corp.userservice.response;
+package s3.corp.basedomains.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,8 +9,10 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserResponse {
-    private Long id;
+public class OrderDto {
+    private String id;
     private String name;
-    private String email;
+    private int qty;
+    private double price;
+    private Long userId;
 }

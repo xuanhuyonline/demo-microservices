@@ -16,8 +16,11 @@ public class GatewayConfig {
     public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route(r -> r
-                        .path("/api/user-details/**")
-                        .uri("http://localhost:8080/"))
+                        .path("/api/v2/**")
+                        .uri("http://localhost:8090/"))
+                .route(r -> r
+                        .path("/api/v3/**")
+                        .uri("http://localhost:8091/"))
                 .route(r -> r
                         .path("/api/v1/**")
                         .filters(f -> f.requestRateLimiter(c -> c.setRateLimiter(redisRateLimiter()).setStatusCode(HttpStatus.TOO_MANY_REQUESTS)))
